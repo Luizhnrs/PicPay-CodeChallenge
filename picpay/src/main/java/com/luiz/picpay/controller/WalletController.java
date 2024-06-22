@@ -4,6 +4,7 @@ import com.luiz.picpay.controller.dto.CreateWalletDto;
 import com.luiz.picpay.entity.Wallet;
 import com.luiz.picpay.repository.WalletTypeRepository;
 import com.luiz.picpay.service.WalletService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class WalletController {
         this.walletService = walletService;
     }
     @PostMapping("/wallets")
-    public ResponseEntity<Wallet> createWallet(@RequestBody CreateWalletDto dto){
+    public ResponseEntity<Wallet> createWallet(@RequestBody @Valid CreateWalletDto dto){
        var wallet = walletService.createWallet(dto);
        return ResponseEntity.ok(wallet);
     }
