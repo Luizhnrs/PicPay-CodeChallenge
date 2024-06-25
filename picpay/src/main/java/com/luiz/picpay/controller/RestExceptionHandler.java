@@ -1,19 +1,16 @@
 package com.luiz.picpay.controller;
 
-import com.luiz.picpay.exceptions.ExistingWalletException;
-import org.springframework.beans.factory.parsing.Problem;
+import com.luiz.picpay.exceptions.BankException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.security.InvalidAlgorithmParameterException;
-
 @RestControllerAdvice
 public class RestExceptionHandler {
-    @ExceptionHandler(ExistingWalletException.class)
-    public ProblemDetail handleWalletException(ExistingWalletException ex)
+    @ExceptionHandler(BankException.class)
+    public ProblemDetail handleWalletException(BankException ex)
     {
         return ex.toProblemDetail();
     }
