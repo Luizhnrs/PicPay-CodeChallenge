@@ -94,5 +94,17 @@ public class Wallet {
     public boolean isTransactionAllowedForWalletType() {
         return this.walletType.equals(WalletType.Enum.USER.get());
     }
+
+    public boolean isBalanceBiggerThan(BigDecimal value) {
+        return this.balance.doubleValue() >= value.doubleValue();
+    }
+
+    public void debit(BigDecimal value) {
+      this.balance =  this.balance.min(value);
+    }
+
+    public void credit(BigDecimal value) {
+       this.balance = this.balance.add(value);
+    }
 }
 
