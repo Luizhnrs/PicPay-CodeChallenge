@@ -3,7 +3,7 @@ package com.luiz.picpay.exceptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 
-public class WalletDataExistingException extends ExistingWalletException{
+public class WalletDataExistingException extends BankException {
    private String detail;
    public WalletDataExistingException(String detail){
     this.detail = detail;
