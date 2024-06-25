@@ -90,5 +90,9 @@ public class Wallet {
     public void setWalletType(WalletType walletType) {
         this.walletType = walletType;
     }
+
+    public boolean isTransactionAllowedForWalletType() {
+        return this.walletType.equals(WalletType.Enum.USER.get());
+    }
 }
 
