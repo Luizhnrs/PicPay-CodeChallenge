@@ -2,6 +2,8 @@ package com.luiz.picpay.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "tb_wallet_type" )
 public class WalletType {
@@ -47,5 +49,17 @@ public class WalletType {
         public WalletType get(){
             return new WalletType(id,description);
         }
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WalletType that = (WalletType) o;
+        return Objects.equals(id, that.id) && Objects.equals(description, that.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, description);
     }
 }
