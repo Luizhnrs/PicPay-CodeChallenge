@@ -10,9 +10,10 @@ import com.luiz.picpay.exceptions.WalletNotFoundException;
 import com.luiz.picpay.repository.TransactionRepository;
 import com.luiz.picpay.repository.WalletRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;
-
+@Service
 public class TransactionService {
     private final TransactionRepository transactionRepository;
     private final AuthService authService;
