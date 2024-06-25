@@ -19,4 +19,10 @@ public class Transaction {
     private Wallet receiver;
     @Column(name = "value")
     private BigDecimal value;
+
+    public Transaction(Wallet sender, Wallet receiver, BigDecimal value) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.value = value;
+    }
 }
