@@ -85,7 +85,7 @@ O desafio do PicPay consiste em desenvolver uma aplicação backend que permita 
     "password": "senha"
     "walletType": "USER or MERCHANT"
   }
-###Efetuar Tranferencia
+### Efetuar Tranferencia
   **POST** /transfer
 ```json
 {
