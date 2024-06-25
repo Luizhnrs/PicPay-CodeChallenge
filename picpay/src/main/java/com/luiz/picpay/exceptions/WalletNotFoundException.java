@@ -14,5 +14,6 @@ public WalletNotFoundException(Long walletId){
         var pb = ProblemDetail.forStatus(HttpStatus.UNPROCESSABLE_ENTITY);
         pb.setTitle("Wallet not found");
         pb.setDetail("There is no wallet with id" + walletId + ".");
+        return pb;
     }
 }
