@@ -34,8 +34,6 @@ public class TransferenciaSteps {
         autorizacaoExterna = false;
     }
 
-    // ===== WHEN =====
-
     @Quando("o usuário A tenta transferir {int} reais para si mesmo")
     public void transferir_para_si_mesmo(int valor) {
         transferenciaRealizada = false;
@@ -99,8 +97,6 @@ public class TransferenciaSteps {
         }
     }
 
-    // ===== THEN =====
-
     @Então("o sistema deve bloquear a transferência")
     public void bloquear_transferencia() {
         assertFalse(transferenciaRealizada);
@@ -153,7 +149,7 @@ public class TransferenciaSteps {
 
     @Então("o sistema deve aguardar a resposta corretamente")
     public void aguardar_resposta() {
-        assertTrue(true); // simulação
+        assertTrue(true);
     }
 
     @Então("não deve duplicar a transação")
